@@ -26,7 +26,7 @@ RUN apk add --no-cache sshpass git curl ansible mysql-client openssh-client-defa
     chmod +x /usr/local/bin/semaphore-wrapper &&\
     chmod +x /usr/local/bin/semaphore
 
-WORKDIR /home/semaphore
+WORKDIR /etc/semaphore
 
 ENTRYPOINT ["/sbin/tini", "--"]
 CMD ["/usr/local/bin/semaphore-wrapper", "/usr/local/bin/semaphore", "server", "--config", "/etc/semaphore/config.json"]
