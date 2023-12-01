@@ -10,7 +10,7 @@ git clone https://github.com/ansible-semaphore/semaphore.git /go/src/github.com/
 WORKDIR /go/src/github.com/ansible-semaphore/semaphore
 
 RUN git checkout v${SEMAPHORE_VERSION} && mv ./deployment/docker/common/semaphore-wrapper /usr/local/bin/semaphore-wrapper && \
-curl -L https://github.com/ansible-semaphore/semaphore/releases/download/v${SEMAPHORE_VERSION}/semaphore_${SEMAPHORE_VERSION}_linux_arm64.tar.gz -o semaphore.tar.gz && \ 
+curl -L https://github.com/ansible-semaphore/semaphore/releases/download/v${SEMAPHORE_VERSION}/semaphore_${SEMAPHORE_VERSION}_${TARGETOS}_${TARGETARCH}.tar.gz -o semaphore.tar.gz && \ 
 tar xf semaphore.tar.gz && \
 mv ./semaphore /usr/local/bin/semaphore
 
